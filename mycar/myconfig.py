@@ -69,8 +69,8 @@
 # #The DEFAULT_MODEL_TYPE will choose which model will be created at training time. This chooses
 # #between different neural network designs. You can override this setting by passing the command
 # #line parameter --type to the python manage.py train and drive commands.
-# DEFAULT_MODEL_TYPE = 'linear'   #(linear|categorical|rnn|imu|behavior|3d|localizer|latent)
-# BATCH_SIZE = 128                #how many records to use when doing one pass of gradient decent. Use a smaller number if your gpu is running out of memory.
+# DEFAULT_MODEL_TYPE = '3d'   #(linear|categorical|rnn|imu|behavior|3d|localizer|latent)
+BATCH_SIZE = 128                #how many records to use when doing one pass of gradient decent. Use a smaller number if your gpu is running out of memory.
 # TRAIN_TEST_SPLIT = 0.8          #what percent of records to use for training. the remaining used for validation.
 # MAX_EPOCHS = 100                #how many times to visit all records of your data
 # SHOW_PLOT = True                #would you like to see a pop up display of final loss?
@@ -108,8 +108,8 @@
 # #Model transfer options
 # #When copying weights during a model transfer operation, should we freeze a certain number of layers
 # #to the incoming weights and not allow them to change during training?
-# FREEZE_LAYERS = False               #default False will allow all layers to be modified by training
-# NUM_LAST_LAYERS_TO_TRAIN = 7        #when freezing layers, how many layers from the last should be allowed to train?
+FREEZE_LAYERS = True               #default False will allow all layers to be modified by training
+NUM_LAST_LAYERS_TO_TRAIN = 2        #when freezing layers, how many layers from the last should be allowed to train?
 # 
 # 
 # #JOYSTICK
